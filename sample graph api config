@@ -1,0 +1,16 @@
+## Microsoft Graph API Usage
+
+### Create User
+- Method: POST URL: /v1.0/users
+- Permission: User.ReadWrite.All (Application)
+- Purpose: Automated identity provisioning
+
+### Add User to Security Group
+- Method: POST URL: /v1.0/groups/{group-id}/members/$ref
+- Permission: GroupMember.ReadWrite.All (Application)
+- Purpose: Group-based access assignment
+
+### Design Considerations
+- Application permissions used for non-interactive automation
+- Least privilege permissions granted
+- No delegated permissions required
