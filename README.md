@@ -1,53 +1,34 @@
 # ai-assisted-m365-identity-onboarding
 Automated M365 User Provisioning and Security Governance pipeline using Power Automate, Microsoft Graph API, and Entra ID
 
+## Solution Overview
+The solution automates onboarding using the following flow:
+1. User details collected via Microsoft Form
+2. Power Automate orchestrates the workflow
+3. Decision layer classifies the user (rules / future AI agent)
+4. Microsoft Graph API creates the user account
+5. User is added to a Security Group
+6. Conditional Access enforces MFA and security policies
 
-##Overview
-This project demonstrates a secure, API-driven identity onboarding workflow for Microsoft 365, enhanced with an AI-assisted decision layer while maintaining strict security and governance controls.
+AI is used **only for decision support**, never for execution.
 
-The goal is to move from manual, portal-based onboarding to a scalable, policy-driven identity lifecycle design.
+## Architecture Flow
+See the architecture diagram for a high-level view of the system:
+<img width="3558" height="580" alt="Flowchart" src="https://github.com/user-attachments/assets/f81a02ed-dc47-4567-9659-5b5a95c2887b" />
 
-##Problem Statement
-Manual user onboarding often leads to:
-- Inconsistent access assignments
-- Security gaps
-- Over-privileged accounts
-- Poor auditability
+## Security Design Principles
+- Application permissions with least privilege
+- Group-based access control (RBAC)
+- Conditional Access applied via Security Groups
+- Secrets stored securely, never exposed in code
 
-This design focuses on reducing risk through automation, standardization, and identity-first thinking.
+## Future Enhancements to be considered
+- AI agent integration for risk scoring
+- Manager approval for privileged roles
+- Audit logging and reporting
+- Integration with ITSM tools
 
-
-##Highlights
-- Microsoft Graph API via App Registration
-- Least-privilege API permissions
-- Group-based access assignment
-- Conditional Access enforcement for MFA
-- AI-assisted classification with human-in-the-loop control
-
-
-##Role of AI
-AI is used *only for decision support*, not execution.
-
-##AI responsibilities:
-- Suggest onboarding access profiles
-- Flag ambiguous or risky requests
-
-##AI does NOT:
-- Call Microsoft Graph directly
-- Assign permissions autonomously
-- Bypass security policies
-
-All execution remains deterministic, auditable, and policy-driven.
-
-
-##Security & Governance Principles
-- No direct role or permission assignment
-- Conditional Access enforced via group membership
-- Clear separation of decision, execution, and enforcement
-- Designed with Zero Trust principles in mind
-
-
-##Learning Outcomes
+## Learning Outcomes
 - Identity lifecycle design over click-based administration
 - API-first automation mindset
 - Responsible AI integration with guardrails
