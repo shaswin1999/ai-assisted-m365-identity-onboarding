@@ -1,0 +1,10 @@
+{
+  "accountEnabled": true,
+  "displayName": "First Name" "Last Name",
+  "mailNickname": "First Name",
+  "userPrincipalName": "First Name.Last Name@yourdomain.com",
+  "passwordProfile": {
+    "forceChangePasswordNextSignIn": true,
+    "password": "TemporaryPassword123!"
+  }
+}
