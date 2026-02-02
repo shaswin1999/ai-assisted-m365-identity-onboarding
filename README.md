@@ -31,7 +31,6 @@ See the architecture diagram for a high-level view of the system:
 ## Learning Outcomes
 - Identity lifecycle design over click-based administration
 - API-first automation mindset
-- Responsible AI integration with guardrails
 - Enterprise-ready security thinking
 
 
