@@ -1,0 +1,21 @@
+## Security and Design Considerations
+
+### Identity & Access
+- Users are never granted permissions directly
+- All access is assigned via Security Groups
+- Conditional Access policies are linked to groups, not users
+
+### Automation
+- Power Automate is used strictly as an orchestration layer
+- Decision logic is isolated from execution logic
+
+### Secret Management
+- Client secrets are stored securely
+- No secrets are committed to the repository
+
+### Architectural Intent
+The design prioritizes:
+- Security
+- Auditability
+- Extensibility
+- Enterprise best practices
